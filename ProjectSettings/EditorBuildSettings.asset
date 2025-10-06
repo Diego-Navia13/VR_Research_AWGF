@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Environment1.unity
+    path: Assets/Scenes/Environment1-Tara.unity
     guid: b10e02e759c65f046bcc26eb65655228
   - enabled: 1
     path: Assets/Scenes/Blackhole.unity
