@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Environment1.unity
-    guid: b10e02e759c65f046bcc26eb65655228
+    guid: 023ecdb2169d452439a17186d08916be
+  - enabled: 1
+    path: Assets/Scenes/WishScene.unity
+    guid: 5a77cf2384ada994f90349ffe7e1c681
   - enabled: 1
     path: Assets/Scenes/Blackhole.unity
     guid: dfd3b0802c662aa48984138d6b461501
