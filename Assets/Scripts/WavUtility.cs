@@ -41,6 +41,10 @@ public static class WavUtility
         {
             ConvertAndWrite(fileStream, clip);
             WriteHeader(fileStream, clip);
+
+            Debug.Log(filePath);
+            Debug.Log(fileStream);
+            Debug.Log(clip);
         }
     }
 

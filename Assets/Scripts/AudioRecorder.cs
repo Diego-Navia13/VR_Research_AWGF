@@ -7,13 +7,15 @@ public class AudioRecorder : MonoBehaviour
 {
     private AudioClip recordedClip;
     [SerializeField] AudioSource audioSource;
-    private string directoryPath = "Recordings";
+    private string directoryPath;
     private float startTime;
     private float recordingLength;
-    private bool clipRecorded = false;
+    public bool clipRecorded = false;
 
     private void Awake()
     {
+        directoryPath = Path.Combine(Application.dataPath, "Recordings");
+
         if (!Directory.Exists(directoryPath))
         {
             Directory.CreateDirectory(directoryPath);
@@ -39,10 +41,20 @@ public class AudioRecorder : MonoBehaviour
     public void StopRecording()
     {
         if (clipRecorded) return;
-        Microphone.End(null);
+
+        // Safely end microphone (use first device if available)
+        if (Microphone.devices.Length > 0)
+            Microphone.End(Microphone.devices[0]);
+        else
+            Microphone.End(null);
+
         recordingLength = Time.realtimeSinceStartup - startTime;
         recordedClip = TrimClip(recordedClip, recordingLength);
         SaveRecording();
+
+        // If you don't need the trimmed clip after saving, destroy it too:
+        UnityEngine.Object.Destroy(recordedClip);
+        recordedClip = null;
     }
 
     public void SaveRecording()
@@ -62,14 +74,33 @@ public class AudioRecorder : MonoBehaviour
 
     private AudioClip TrimClip(AudioClip clip, float length)
     {
-        int samples = (int)(clip.frequency * length);
+        if (clip == null) return null;
+
+        int samples = Mathf.Clamp((int)(clip.frequency * length), 0, clip.samples);
         float[] data = new float[samples];
         clip.GetData(data, 0);
 
-        AudioClip trimmedClip = AudioClip.Create(clip.name, samples,
+        AudioClip trimmedClip = AudioClip.Create(clip.name + "_trimmed", samples,
             clip.channels, clip.frequency, false);
         trimmedClip.SetData(data, 0);
 
+        // Free the original clip's native memory — Microphone.Start() creates it
+        UnityEngine.Object.Destroy(clip);
+
         return trimmedClip;
     }
+
+    public void UseRecording()
+    {
+        if (recordedClip == null)
+        {
+            Debug.LogWarning("No recording available to use.");
+
+            return;
+        }
+
+        audioSource.clip = recordedClip;
+        Debug.Log("Recording set to AudioSource.");
+    }
+
 }

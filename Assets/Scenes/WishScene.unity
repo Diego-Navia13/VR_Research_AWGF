@@ -236,6 +236,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wish (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4644938502164496195, guid: b12939d1fdce18549aaed7f99db435d9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a503ee58e68eb64da7e5c8141dba273, type: 3}
+    - target: {fileID: 5303261793066951039, guid: b12939d1fdce18549aaed7f99db435d9, type: 3}
+      propertyPath: clipRecorded
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -435,6 +443,14 @@ PrefabInstance:
     - target: {fileID: 1777992807009890560, guid: b12939d1fdce18549aaed7f99db435d9, type: 3}
       propertyPath: m_Name
       value: Wish (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644938502164496195, guid: b12939d1fdce18549aaed7f99db435d9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 74cc3f6cfde523048a0973db3700c313, type: 3}
+    - target: {fileID: 5303261793066951039, guid: b12939d1fdce18549aaed7f99db435d9, type: 3}
+      propertyPath: clipRecorded
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1398,7 +1414,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1777992807009890560, guid: b12939d1fdce18549aaed7f99db435d9, type: 3}
       propertyPath: m_Name
-      value: Wish (3)
+      value: WishDone3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644938502164496195, guid: b12939d1fdce18549aaed7f99db435d9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 00b832d3baac18845b46d2941006f939, type: 3}
+    - target: {fileID: 5303261793066951039, guid: b12939d1fdce18549aaed7f99db435d9, type: 3}
+      propertyPath: clipRecorded
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1471,6 +1495,14 @@ PrefabInstance:
     - target: {fileID: 1777992807009890560, guid: b12939d1fdce18549aaed7f99db435d9, type: 3}
       propertyPath: m_Name
       value: Wish (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644938502164496195, guid: b12939d1fdce18549aaed7f99db435d9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e9b7e003d4ab50418095a5ef31e6979, type: 3}
+    - target: {fileID: 5303261793066951039, guid: b12939d1fdce18549aaed7f99db435d9, type: 3}
+      propertyPath: clipRecorded
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
