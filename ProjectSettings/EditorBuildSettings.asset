@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Environment1.unity
     guid: 023ecdb2169d452439a17186d08916be
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/WishScene.unity
     guid: 5a77cf2384ada994f90349ffe7e1c681
   - enabled: 0
     path: Assets/Scenes/Blackhole.unity
     guid: dfd3b0802c662aa48984138d6b461501
+  - enabled: 1
+    path: Assets/Scenes/WishScene-Tara.unity
+    guid: 40090b246ccf0904c8bae7af10dcc91d
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 072a1a8706e9a1d49851acb59f5f6a23, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 67c4d9fdb5561b049b44d6fb0f86bdc7, type: 2}
