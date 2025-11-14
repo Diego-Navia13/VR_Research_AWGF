@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Environment1-Tara.unity
     guid: b10e02e759c65f046bcc26eb65655228
   - enabled: 1
