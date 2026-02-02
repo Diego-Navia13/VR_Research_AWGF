@@ -11,9 +11,12 @@ public class AudioRecorder : MonoBehaviour
     private float startTime;
     private float recordingLength;
     public bool clipRecorded = false;
+    private WishStateController wishState;
 
     private void Awake()
     {
+        wishState = GetComponent<WishStateController>();
+
         directoryPath = Path.Combine(Application.dataPath, "Recordings");
 
         if (!Directory.Exists(directoryPath))
@@ -52,9 +55,20 @@ public class AudioRecorder : MonoBehaviour
         recordedClip = TrimClip(recordedClip, recordingLength);
         SaveRecording();
 
+        // Assign it to audio playback
+        audioSource.clip = recordedClip;
+
+        // Notify wish system that it is now full
+        wishState.SetWishAudio(recordedClip);
+
+        // Lock recording
+        clipRecorded = true;
+
+        Debug.Log("Wish successfully recorded and assigned.");
+
         // If you don't need the trimmed clip after saving, destroy it too:
-        UnityEngine.Object.Destroy(recordedClip);
-        recordedClip = null;
+        //UnityEngine.Object.Destroy(recordedClip);
+        //recordedClip = null;
     }
 
     public void SaveRecording()
@@ -100,6 +114,8 @@ public class AudioRecorder : MonoBehaviour
         }
 
         audioSource.clip = recordedClip;
+        wishState.SetWishAudio(recordedClip);
+
         Debug.Log("Recording set to AudioSource.");
     }
 
