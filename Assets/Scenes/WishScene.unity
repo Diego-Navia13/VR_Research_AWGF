@@ -1154,6 +1154,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6949821408397335338, guid: b12939d1fdce18549aaed7f99db435d9, type: 3}
+      propertyPath: hasWish
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8366797316063980582, guid: b12939d1fdce18549aaed7f99db435d9, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1841,7 +1845,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7313654230448209575, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_Name
-      value: XR Interaction Setup (1)
+      value: XR Interaction Setup
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014170783705847997, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014170785475729474, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

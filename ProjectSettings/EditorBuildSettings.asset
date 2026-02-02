@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/WishScene.unity
     guid: 5a77cf2384ada994f90349ffe7e1c681
   - enabled: 0
-    path: Assets/Scenes/Blackhole.unity
+    path: Assets/Scenes/BlackholeTest.unity
     guid: dfd3b0802c662aa48984138d6b461501
   - enabled: 1
     path: Assets/Scenes/WishScene-Tara.unity
