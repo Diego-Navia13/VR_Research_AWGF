@@ -14,16 +14,16 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
+  m_Fog: 1
+  m_FogColor: {r: 0.31189927, g: 0.4056604, b: 0.39749703, a: 1}
+  m_FogMode: 1
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.38
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 023808db2bfa00d44929aa2176d29c76, type: 2}
@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 328.98
+      value: 343.46
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5636,6 +5636,75 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1657154107
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 43061438749476291, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507587137732214638, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 218.3323
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507587137732214638, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 351.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507587137732214638, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 212.93132
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507587137732214638, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9897444
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507587137732214638, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507587137732214638, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.14284992
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507587137732214638, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507587137732214638, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507587137732214638, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 16.426
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507587137732214638, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3536849316107833372, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5115787170819933700, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
+      propertyPath: m_Name
+      value: Cessy White House
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111477341006788199, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
 --- !u!1001 &1733017342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20323,3 +20392,4 @@ SceneRoots:
   - {fileID: 1156130427}
   - {fileID: 1084001241}
   - {fileID: 1333345408}
+  - {fileID: 1657154107}
