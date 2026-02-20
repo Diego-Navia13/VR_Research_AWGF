@@ -3,6 +3,7 @@ using UnityEngine;
 public class ToggleMultipleLightsOnEnter : MonoBehaviour
 {
     public Light[] lights; // Array of lights to turn on sequentially
+    public GameObject[] mocaps;
     public Light directionalLight; // Main directional light in the environment
     private int currentLightIndex = 0; // Start with the first light
     private bool isPlayerInside = false; // Tracks if the player is inside the trigger
@@ -15,6 +16,11 @@ public class ToggleMultipleLightsOnEnter : MonoBehaviour
         foreach (Light light in lights)
         {
             light.enabled = false;
+        }
+        // Same for mocap captures
+        foreach (GameObject obj in mocaps)
+        {
+            obj.SetActive(false);
         }
     }
 
@@ -55,6 +61,10 @@ public class ToggleMultipleLightsOnEnter : MonoBehaviour
             {
                 directionalLight.enabled = false;
             }
+            foreach (GameObject obj in mocaps)
+            {
+                obj.SetActive(true);
+            }
         }
     }
 
@@ -68,6 +78,11 @@ public class ToggleMultipleLightsOnEnter : MonoBehaviour
             foreach (Light light in lights)
             {
                 light.enabled = false;
+            }
+
+            foreach (GameObject obj in mocaps)
+            {
+                obj.SetActive(false);
             }
 
             // Turn the main directional light back on when leaving
