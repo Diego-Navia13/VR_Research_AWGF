@@ -634,7 +634,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 1, b: 0.9668927, a: 1}
+      maxColor: {r: 0, g: 0.7924528, b: 0.33190483, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5167,11 +5167,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!4 &485619927 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9014170783809206335, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
-  m_PrefabInstance: {fileID: 166230714}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &616274970
 GameObject:
   m_ObjectHideFlags: 0
@@ -10408,7 +10403,7 @@ GameObject:
   - component: {fileID: 1084001240}
   - component: {fileID: 1084001239}
   - component: {fileID: 1084001238}
-  - component: {fileID: 1084001237}
+  - component: {fileID: 1084001242}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -10416,20 +10411,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1084001237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084001236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4b00b9b8cf4336448755adadc89d92f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Blackhole
-  vrCamera: {fileID: 485619927}
 --- !u!135 &1084001238
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10516,6 +10497,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1084001242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084001236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f320b1faffe5524fb308ff86a21c5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 967469799}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Main-Blackhole
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1092162606
 GameObject:
   m_ObjectHideFlags: 0
