@@ -56,7 +56,7 @@ public class WishStateController : MonoBehaviour
         wishRenderer.material.color = emptyColor;
     }
 
-    // Controlled playback (not hover)
+    // Controlled playback
     public void PlayWish()
     {
         if (!hasWish) return;
