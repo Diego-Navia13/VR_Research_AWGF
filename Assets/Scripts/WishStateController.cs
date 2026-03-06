@@ -9,7 +9,7 @@ public class WishStateController : MonoBehaviour
     public bool hasWish = false;
 
     [Header("Audio")]
-    public AudioSource audioSource;
+    public AudioSource wishRecording;
 
     [Header("Visuals")]
     public Renderer wishRenderer;
@@ -20,7 +20,7 @@ public class WishStateController : MonoBehaviour
     void Start()
     {
         // If the wish already has audio assigned at start
-        if (audioSource != null && audioSource.clip != null)
+        if (wishRecording != null && wishRecording.clip != null)
         {
             hasWish = true;
             AssignRandomFilledColor();
@@ -34,7 +34,7 @@ public class WishStateController : MonoBehaviour
     // Called when user finishes recording
     public void SetWishAudio(AudioClip newClip)
     {
-        audioSource.clip = newClip;
+        wishRecording.clip = newClip;
         hasWish = true;
 
         AssignRandomFilledColor();
@@ -43,7 +43,7 @@ public class WishStateController : MonoBehaviour
     void AssignRandomFilledColor()
     {
         filledColor = Random.ColorHSV(
-            0f, 1f,
+            0.6f, 1f,
             0.6f, 1f,
             0.6f, 1f
         );
@@ -61,13 +61,13 @@ public class WishStateController : MonoBehaviour
     {
         if (!hasWish) return;
 
-        if (!audioSource.isPlaying)
-            audioSource.Play();
+        if (!wishRecording.isPlaying)
+            wishRecording.Play();
     }
 
     public void StopWish()
     {
-        if (audioSource.isPlaying)
-            audioSource.Stop();
+        if (wishRecording.isPlaying)
+            wishRecording.Stop();
     }
 }

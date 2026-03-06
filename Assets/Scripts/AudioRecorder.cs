@@ -11,7 +11,9 @@ public class AudioRecorder : MonoBehaviour
     private float startTime;
     private float recordingLength;
     public bool clipRecorded = false;
+    private bool canRecord = false;
     private WishStateController wishState;
+    private const int MAX_RECORDING_SECONDS = 10;
 
     private void Awake()
     {
@@ -30,12 +32,17 @@ public class AudioRecorder : MonoBehaviour
         clipRecorded = state;
     }
 
+    public void setCanRecord(bool state)
+    {
+        canRecord = state;
+    }
+
     public void StartRecording()
     {
-        if (clipRecorded) return;
+        if (clipRecorded || canRecord) return;
         string device = Microphone.devices[0];
         int sampleRate = 44100;
-        int lengthSec = 3599;
+        int lengthSec = MAX_RECORDING_SECONDS;
 
         recordedClip = Microphone.Start(device, false, lengthSec, sampleRate);
         startTime = Time.realtimeSinceStartup;

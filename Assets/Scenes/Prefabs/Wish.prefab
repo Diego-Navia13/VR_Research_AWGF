@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 6949821408397335338}
   m_Layer: 0
   m_Name: Wish
-  m_TagString: Untagged
+  m_TagString: Wish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -386,6 +386,18 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7229443423664489209}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
@@ -411,18 +423,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -599,7 +599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasWish: 0
-  audioSource: {fileID: 4644938502164496195}
+  wishRecording: {fileID: 4644938502164496195}
   wishRenderer: {fileID: 2952376913641598239}
   emptyColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1922028674523308430
