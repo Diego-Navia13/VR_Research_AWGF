@@ -29,17 +29,29 @@ public class AudioRecorder : MonoBehaviour
 
     public void hasRecorded(bool state)
     {
-        clipRecorded = state;
+        if (canRecord)
+        {
+            clipRecorded = state;
+
+        }
     }
 
     public void setCanRecord(bool state)
     {
+        Debug.Log("State of canRecord prior to change: " + canRecord.ToString());
         canRecord = state;
+        Debug.Log("State changed to " + canRecord.ToString());
     }
 
     public void StartRecording()
     {
-        if (clipRecorded || canRecord) return;
+        if (clipRecorded || !canRecord)
+        {
+            Debug.Log("I can't record yet");
+            Debug.Log("State of canRecord: " + canRecord.ToString());
+            Debug.Log("State of clipRecorded: " + clipRecorded.ToString());
+            return;
+        }
         string device = Microphone.devices[0];
         int sampleRate = 44100;
         int lengthSec = MAX_RECORDING_SECONDS;
@@ -50,7 +62,7 @@ public class AudioRecorder : MonoBehaviour
 
     public void StopRecording()
     {
-        if (clipRecorded) return;
+        if (clipRecorded || !canRecord) return;
 
         // Safely end microphone (use first device if available)
         if (Microphone.devices.Length > 0)

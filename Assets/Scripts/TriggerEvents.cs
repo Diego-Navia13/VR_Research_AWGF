@@ -8,10 +8,11 @@ using UnityEngine.SceneManagement;
 public class TriggerEvents : MonoBehaviour
 {
     public UnityEvent onTrigger;
+    public string tagNameCheck;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(tagNameCheck))
         {
             if (onTrigger != null)
             {
