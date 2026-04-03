@@ -1,12 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
-/// <summary>
-/// Trigger events when a player enters a trigger.
-/// </summary>
-public class TriggerEvents : MonoBehaviour
+public class RecordTrigger : MonoBehaviour
 {
+
     public UnityEvent onTriggerEnter;
     public string tagNameCheck;
 
@@ -17,6 +16,8 @@ public class TriggerEvents : MonoBehaviour
             if (onTriggerEnter != null)
             {
                 onTriggerEnter.Invoke();
+                AudioRecorder audio = other.GetComponent<AudioRecorder>();
+                audio.setCanRecord(true);
             }
         }
     }

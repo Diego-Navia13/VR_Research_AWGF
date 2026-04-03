@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -18,6 +19,7 @@ public class WishStateController : MonoBehaviour
     private Color filledColor;
     public float forceAmount = 10f;
     private Rigidbody rb;
+    public bool isBeingGrabbed = false;
 
     void Start()
     {
@@ -32,7 +34,13 @@ public class WishStateController : MonoBehaviour
             SetEmptyVisual();
         }
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * forceAmount, ForceMode.Impulse);
+        UnityEngine.Vector3 randDirection = UnityEngine.Random.onUnitSphere;
+        rb.AddForce(randDirection * forceAmount, ForceMode.Impulse);
+    }
+
+    public void setIsBeingGrabbed(bool state)
+    {
+        isBeingGrabbed = state;
     }
 
     // Called when user finishes recording

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Accessibility;
 
 public class AudioRecorder : MonoBehaviour
 {
@@ -12,12 +13,12 @@ public class AudioRecorder : MonoBehaviour
     private float recordingLength;
     public bool clipRecorded = false;
     private bool canRecord = false;
-    private WishStateController wishState;
+    public WishStateController wishState;
     private const int MAX_RECORDING_SECONDS = 10;
 
     private void Awake()
     {
-        wishState = GetComponent<WishStateController>();
+        //wishState = GetComponent<WishStateController>();
 
         directoryPath = Path.Combine(Application.dataPath, "Recordings");
 
@@ -27,20 +28,22 @@ public class AudioRecorder : MonoBehaviour
         }
     }
 
-    public void hasRecorded(bool state)
+    private void hasRecorded(bool state)
     {
-        if (canRecord)
-        {
-            clipRecorded = state;
-
-        }
+        clipRecorded = state;
     }
 
     public void setCanRecord(bool state)
     {
-        Debug.Log("State of canRecord prior to change: " + canRecord.ToString());
-        canRecord = state;
-        Debug.Log("State changed to " + canRecord.ToString());
+        Debug.Log("State of canRecord prior to change: " + this.canRecord.ToString());
+        this.canRecord = state;
+        Debug.Log("State changed to " + this.canRecord.ToString());
+        Debug.Log($"[Trigger] {gameObject.name} | ID: {GetInstanceID()}");
+    }
+
+    public void Update()
+    {
+        Debug.Log("State is currently " + canRecord.ToString());
     }
 
     public void StartRecording()
@@ -63,6 +66,8 @@ public class AudioRecorder : MonoBehaviour
     public void StopRecording()
     {
         if (clipRecorded || !canRecord) return;
+
+        hasRecorded(true);
 
         // Safely end microphone (use first device if available)
         if (Microphone.devices.Length > 0)

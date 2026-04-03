@@ -344,8 +344,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
-  m_Height: 0.2
+  m_Radius: 0.4
+  m_Height: 0.4
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5478165282784712594
@@ -423,9 +423,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6949821408397335338}
+        m_TargetAssemblyTypeName: WishStateController, Assembly-CSharp
+        m_MethodName: setIsBeingGrabbed
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6949821408397335338}
+        m_TargetAssemblyTypeName: WishStateController, Assembly-CSharp
+        m_MethodName: setIsBeingGrabbed
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -456,18 +480,6 @@ MonoBehaviour:
   m_Deactivated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5303261793066951039}
-        m_TargetAssemblyTypeName: AudioRecorder, Assembly-CSharp
-        m_MethodName: hasRecorded
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 5303261793066951039}
         m_TargetAssemblyTypeName: AudioRecorder, Assembly-CSharp
         m_MethodName: StopRecording
@@ -537,8 +549,8 @@ MonoBehaviour:
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
   m_SmoothPosition: 0
-  m_SmoothPositionAmount: 8
-  m_TightenPosition: 0.1
+  m_SmoothPositionAmount: 1.7
+  m_TightenPosition: 0.746
   m_TrackRotation: 1
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
@@ -586,6 +598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 4644938502164496195}
   clipRecorded: 0
+  wishState: {fileID: 6949821408397335338}
 --- !u!114 &6949821408397335338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,7 +615,8 @@ MonoBehaviour:
   wishRecording: {fileID: 4644938502164496195}
   wishRenderer: {fileID: 2952376913641598239}
   emptyColor: {r: 1, g: 1, b: 1, a: 1}
-  forceAmount: 2
+  forceAmount: 5
+  isBeingGrabbed: 0
 --- !u!1 &1922028674523308430
 GameObject:
   m_ObjectHideFlags: 0
