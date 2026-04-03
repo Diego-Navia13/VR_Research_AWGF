@@ -16,6 +16,8 @@ public class WishStateController : MonoBehaviour
     public Color emptyColor = Color.gray;
 
     private Color filledColor;
+    public float forceAmount = 10f;
+    private Rigidbody rb;
 
     void Start()
     {
@@ -29,6 +31,8 @@ public class WishStateController : MonoBehaviour
         {
             SetEmptyVisual();
         }
+        rb = GetComponent<Rigidbody>();
+        rb.AddForce(transform.forward * forceAmount, ForceMode.Impulse);
     }
 
     // Called when user finishes recording
