@@ -85,6 +85,14 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7145475762546904564, guid: 93a131d3fa46c2d4ab596c007464662c, type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145475762546904564, guid: 93a131d3fa46c2d4ab596c007464662c, type: 3}
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145475762546904564, guid: 93a131d3fa46c2d4ab596c007464662c, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 0.45
       objectReference: {fileID: 0}
@@ -130,7 +138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7145475762546904564, guid: 93a131d3fa46c2d4ab596c007464662c, type: 3}
       propertyPath: LifetimeByEmitterSpeedModule.enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7145475762546904564, guid: 93a131d3fa46c2d4ab596c007464662c, type: 3}
       propertyPath: EmissionModule.rateOverDistance.scalar

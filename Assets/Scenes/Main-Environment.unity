@@ -236,6 +236,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PS2-MariaWalking Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8659576716434969914, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -388,15 +392,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.066
       objectReference: {fileID: 0}
     - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.854
       objectReference: {fileID: 0}
     - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.005
       objectReference: {fileID: 0}
     - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -683,6 +687,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PS2-MariaWalking Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8659576716434969914, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -897,43 +905,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 352.16992
+      value: 298.5
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 380.8
+      value: 354
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 296.1
+      value: 345.4
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.708551
+      value: 0.9964941
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.058270168
+      value: 0.0748777
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7021363
+      value: 0.031511847
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.039556373
+      value: 0.019997973
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -7.939
+      value: 8.509
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -89.582
+      value: 3.815
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.491
+      value: 2.583
       objectReference: {fileID: 0}
     - target: {fileID: 7313654230448209575, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_Name
@@ -6609,6 +6617,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PS2-MariaWalking Variant (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8659576716434969914, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6728,6 +6740,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PS2-MariaWalking Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8659576716434969914, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6789,6 +6805,10 @@ PrefabInstance:
     - target: {fileID: 8659576716434969914, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
       propertyPath: m_Name
       value: PS2-MariaWalking Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8659576716434969914, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12314,6 +12334,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3507587137732214638, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
   m_PrefabInstance: {fileID: 1552641090}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &957585522
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1324893313}
+    m_Modifications:
+    - target: {fileID: 7486996468312107295, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
+      propertyPath: m_Name
+      value: PS2-MariaCamo Variant1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486996468312107295, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.008782731
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.8688466
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.17304811
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99945104
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.022792151
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.02371824
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0039492343
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
 --- !u!1 &967469798
 GameObject:
   m_ObjectHideFlags: 0
@@ -12482,7 +12563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7c1181629c5e94e44a8e60d7751ecae1, type: 3}
       propertyPath: m_Name
-      value: Maria_Walking
+      value: Large Solo_Maria_Walking
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14218,43 +14299,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 7c1181629c5e94e44a8e60d7751ecae1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 63.03627
+      value: 22.255638
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c1181629c5e94e44a8e60d7751ecae1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 63.03627
+      value: 22.255638
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c1181629c5e94e44a8e60d7751ecae1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 63.03627
+      value: 22.255638
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c1181629c5e94e44a8e60d7751ecae1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.026684
+      value: 393.59
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c1181629c5e94e44a8e60d7751ecae1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -33.35
+      value: 350.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c1181629c5e94e44a8e60d7751ecae1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.9326
+      value: 424.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c1181629c5e94e44a8e60d7751ecae1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.708551
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c1181629c5e94e44a8e60d7751ecae1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.05827017
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c1181629c5e94e44a8e60d7751ecae1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.7021363
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c1181629c5e94e44a8e60d7751ecae1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.039556377
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c1181629c5e94e44a8e60d7751ecae1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14270,11 +14351,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7c1181629c5e94e44a8e60d7751ecae1, type: 3}
       propertyPath: m_Name
-      value: Maria_Camoflux (1)
+      value: Waterfall Solo_MariaConflux
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7c1181629c5e94e44a8e60d7751ecae1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14284,7 +14365,7 @@ PrefabInstance:
       addedObject: {fileID: 2113958586}
     - targetCorrespondingSourceObject: {fileID: -7166265851168885111, guid: 7c1181629c5e94e44a8e60d7751ecae1, type: 3}
       insertIndex: 0
-      addedObject: {fileID: 1362926944}
+      addedObject: {fileID: 2005250851}
     - targetCorrespondingSourceObject: {fileID: -7166265851168885111, guid: 7c1181629c5e94e44a8e60d7751ecae1, type: 3}
       insertIndex: 2
       addedObject: {fileID: 868127545}
@@ -14513,6 +14594,10 @@ PrefabInstance:
     - target: {fileID: 8659576716434969914, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
       propertyPath: m_Name
       value: PS2-MariaWalking Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8659576716434969914, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14901,68 +14986,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
   m_PrefabInstance: {fileID: 1361112887}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1362926943
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1324893313}
-    m_Modifications:
-    - target: {fileID: 7486996468312107295, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
-      propertyPath: m_Name
-      value: PS2-MariaCamo Variant1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
---- !u!4 &1362926944 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
-  m_PrefabInstance: {fileID: 1362926943}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1432316326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15014,6 +15037,10 @@ PrefabInstance:
     - target: {fileID: 8659576716434969914, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
       propertyPath: m_Name
       value: PS2-MariaWalking Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8659576716434969914, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15071,6 +15098,10 @@ PrefabInstance:
     - target: {fileID: 8659576716434969914, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
       propertyPath: m_Name
       value: PS2-MariaWalking Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8659576716434969914, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21256,7 +21287,7 @@ Transform:
   m_GameObject: {fileID: 1767358055}
   serializedVersion: 2
   m_LocalRotation: {x: -0.6661166, y: 0.25111133, z: -0.20319119, w: -0.6722687}
-  m_LocalPosition: {x: -325.8, y: -25.9, z: 36}
+  m_LocalPosition: {x: -325.8, y: -24.9, z: 36}
   m_LocalScale: {x: 90.323975, y: 90.32403, z: 90.323975}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21489,6 +21520,10 @@ PrefabInstance:
     - target: {fileID: 8659576716434969914, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
       propertyPath: m_Name
       value: PS2-MariaWalking Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8659576716434969914, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26476,6 +26511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PS2-MariaWalking Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8659576716434969914, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26915,6 +26954,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
   m_PrefabInstance: {fileID: 1981043380}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2005250851 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
+  m_PrefabInstance: {fileID: 957585522}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2007885030 stripped
 Transform:
