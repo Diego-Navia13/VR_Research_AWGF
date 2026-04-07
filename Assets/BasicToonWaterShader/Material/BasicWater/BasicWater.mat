@@ -97,7 +97,7 @@ Material:
     - _BackgroundCartoonFactor: 1
     - _Brightness: 0.92
     - _BumpScale: 1
-    - _CartoonFactor: 1
+    - _CartoonFactor: 0.69
     - _ColorSteps: 4.32
     - _Cutoff: 0.5
     - _DepthFactor: 9.54
@@ -111,12 +111,12 @@ Material:
     - _FoamAmount: 1
     - _FoamBubbleScale: 5
     - _FoamBubbleSpeed: 0.2
-    - _FoamCutoff: 0.985
+    - _FoamCutoff: 0.811
     - _FoamEdgeBlend: 1
     - _FoamLineWidth: 0.1
-    - _FoamNoiseScale: 1.99
+    - _FoamNoiseScale: 0.04
     - _FoamSoftness: 0.05
-    - _FoamSpeed: 2.89
+    - _FoamSpeed: 0.15
     - _FoamWidth: 0.1
     - _GlossMapScale: 1
     - _Glossiness: 0.968
@@ -150,7 +150,7 @@ Material:
     - _SrcBlend: 1
     - _Steps: 3.14
     - _TextureBlend: 0.672
-    - _TextureDistortion: 1
+    - _TextureDistortion: 0.882
     - _Transparency: 0.392
     - _TransparencySpeed: 1
     - _TransparencyStrength: 0.859
@@ -167,11 +167,11 @@ Material:
     - _WaveStrength: 0.1
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+    - _Color: {r: 0.7509433, g: 0.74359936, b: 0.74102515, a: 1}
     - _DeepColor: {r: 0.4762816, g: 0.7215106, b: 0.7264151, a: 0}
     - _EdgeColor: {r: 0.5896226, g: 0.8974057, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FoamColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
+    - _FoamColor: {r: 0.11475256, g: 0.11685302, b: 0.2679245, a: 1}
     - _HighlightColor: {r: 1, g: 0, b: 0, a: 1}
     - _HologramColor: {r: 1, g: 1, b: 1, a: 1}
     - _MainColor: {r: 1, g: 1, b: 1, a: 0.5}
@@ -184,5 +184,5 @@ Material:
     - _ShadowColor3: {r: 0, g: 0, b: 0, a: 1}
     - _ShallowColor: {r: 0, g: 0.8595505, b: 1, a: 0.725}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
-    - _TextureColor: {r: 0.6886792, g: 0.5035155, b: 0.5035155, a: 1}
+    - _TextureColor: {r: 1, g: 0, b: 0.79543877, a: 1}
   m_BuildTextureStacks: []

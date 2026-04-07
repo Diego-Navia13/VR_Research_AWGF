@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Environment1.unity
     guid: 023ecdb2169d452439a17186d08916be
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test-Wish.unity
     guid: 76581062c21c0374185e8790b3f5fa38
   - enabled: 0
@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Diego/LocomotionTest.unity
     guid: af1efab5179d45644bc1a6efd3e5d7b9
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TestSwimmer-Environment.unity
     guid: 664501dcc5c624240b8009e947b67dfa
   m_configObjects:
