@@ -15,6 +15,7 @@ public class AudioRecorder : MonoBehaviour
     private bool canRecord = false;
     public WishStateController wishState;
     private const int MAX_RECORDING_SECONDS = 10;
+    public AudioSource comeCloserSFX;
 
     private void Awake()
     {
@@ -31,6 +32,14 @@ public class AudioRecorder : MonoBehaviour
     private void hasRecorded(bool state)
     {
         clipRecorded = state;
+    }
+
+    private void playComeCloser()
+    {
+        if (comeCloserSFX != null)
+        {
+            comeCloserSFX.Play();
+        }
     }
 
     public void setCanRecord(bool state)
@@ -50,6 +59,7 @@ public class AudioRecorder : MonoBehaviour
     {
         if (clipRecorded || !canRecord)
         {
+            playComeCloser();
             Debug.Log("I can't record yet");
             Debug.Log("State of canRecord: " + canRecord.ToString());
             Debug.Log("State of clipRecorded: " + clipRecorded.ToString());
