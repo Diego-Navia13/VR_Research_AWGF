@@ -2419,7 +2419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointLight: {fileID: 1370175684}
   maxIntensity: 3
-  movementSensitivity: 4
+  movementSensitivity: 1
   movementThreshold: 0.02
   speedSmoothing: 4
   lightSmoothing: 3
@@ -3248,7 +3248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3127377416852887304, guid: e367714f162349d48a5cb6f00133e149, type: 3}
       propertyPath: fadeDuration
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3127377416852887304, guid: e367714f162349d48a5cb6f00133e149, type: 3}
       propertyPath: colorPropertyName
