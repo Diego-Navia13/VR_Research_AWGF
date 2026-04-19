@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/WishScene-Tara.unity
     guid: 40090b246ccf0904c8bae7af10dcc91d
+  - enabled: 0
+    path: Assets/Scenes/Main-Blackhole 1.unity
+    guid: 36034014661df5149bc4a69632e65018
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 072a1a8706e9a1d49851acb59f5f6a23, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 67c4d9fdb5561b049b44d6fb0f86bdc7, type: 2}
