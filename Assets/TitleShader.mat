@@ -148,10 +148,10 @@ Material:
     - _DeepColor: {r: 0.4762816, g: 0.7215106, b: 0.7264151, a: 0}
     - _EdgeColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FoamColor: {r: 1, g: 0, b: 0.610528, a: 1}
+    - _FoamColor: {r: 1, g: 0, b: 0, a: 1}
     - _HologramColor: {r: 1, g: 1, b: 1, a: 1}
     - _MainColor: {r: 1, g: 1, b: 1, a: 0.5}
-    - _OutlineColor: {r: 1, g: 0, b: 0.7068138, a: 1}
+    - _OutlineColor: {r: 1, g: 0.88666946, b: 0, a: 1}
     - _ShallowColor: {r: 0, g: 0.8595505, b: 1, a: 0.725}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
