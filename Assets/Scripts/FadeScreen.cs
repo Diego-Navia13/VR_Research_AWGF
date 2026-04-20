@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class FadeScreen : MonoBehaviour
 {
-    public bool fadeOnStart = true;
-    public float fadeDuration = 2;
-    public Color fadeColor;
-    public AnimationCurve fadeCurve;
-    public string colorPropertyName = "_Color";
-    private Renderer rend;
+    [Header("Fade Settings")]
+    [SerializeField] private bool fadeOnStart = true;
+    [SerializeField] private float fadeDuration = 2f;
+    [SerializeField] private Color fadeColor = Color.black;
+    [SerializeField] private AnimationCurve fadeCurve;
+    [SerializeField] private string colorPropertyName = "_Color";
 
     //private Material mat;
+
+    private Renderer rend;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,38 @@ public class FadeScreen : MonoBehaviour
         }
     }
 
+    // =========================
+    // ACCESSORS (GETTERS/SETTERS)
+    // =========================
+
+    public void SetFadeDuration(float duration)
+    {
+        fadeDuration = Mathf.Max(0f, duration); // prevent negatives
+    }
+
+    public float GetFadeDuration()
+    {
+        return fadeDuration;
+    }
+
+    public void SetFadeColor(Color color)
+    {
+        fadeColor = color;
+    }
+
+    public Color GetFadeColor()
+    {
+        return fadeColor;
+    }
+
+    // Optional: useful for UnityEvent (can’t pass Color easily)
+    public void SetFadeColorFromRenderer()
+    {
+        fadeColor = rend.material.GetColor(colorPropertyName);
+    }
+
+    // =========================
+
     public void FadeIn()
     {
         Fade(1, 0);
@@ -42,44 +76,37 @@ public class FadeScreen : MonoBehaviour
         Fade(0, 1);
     }
 
-    public void Update()
-    {
-
-    }
-
-
-
     public void Fade(float alphaIn, float alphaOut)
     {
+        StopAllCoroutines(); // prevents overlapping fades
         StartCoroutine(FadeRoutine(alphaIn, alphaOut));
     }
 
     public IEnumerator FadeRoutine(float alphaIn, float alphaOut)
     {
-        //make it visible
         rend.enabled = true;
 
-        float timer = 0;
-        //
+        float timer = 0f;
+
         while (timer <= fadeDuration)
         {
             Color newColor = fadeColor;
 
-            newColor.a = Mathf.Lerp(alphaIn, alphaOut, fadeCurve.Evaluate(timer / fadeDuration)); //took from google
+            newColor.a = Mathf.Lerp(
+                alphaIn,
+                alphaOut,
+                fadeCurve.Evaluate(timer / fadeDuration)
+            );
 
             rend.material.SetColor(colorPropertyName, newColor);
-            //mat.SetColor(colorPropertyName, newColor);
-            //print("should be a = " + newColor.a);
-            //print("is be a = " + rend.material.color.a);
 
-            //print("timer = " + timer);
-            timer += Time.deltaTime; //wait for a frame to pass, might be better to put in update but this works
+            timer += Time.deltaTime;
             yield return null;
         }
 
-        Color newColor2 = fadeColor;
-        newColor2.a = alphaOut;
-        rend.material.SetColor(colorPropertyName, newColor2);
+        Color finalColor = fadeColor;
+        finalColor.a = alphaOut;
+        rend.material.SetColor(colorPropertyName, finalColor);
 
         if (alphaOut == 0)
             rend.enabled = false;
