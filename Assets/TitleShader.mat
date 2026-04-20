@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blackhole
+  m_Name: TitleShader
   m_Shader: {fileID: 4800000, guid: 805c7ee04b94d7b41a346925498e1d2f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
