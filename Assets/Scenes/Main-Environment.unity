@@ -13476,8 +13476,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onTriggerEnter:
     m_PersistentCalls:
-      m_Calls: []
-  tagNameCheck: 
+      m_Calls:
+      - m_Target: {fileID: 1148079407}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Main-Blackhole
+          m_BoolArgument: 0
+        m_CallState: 2
+  tagNameCheck: Player
 --- !u!1 &1092162606
 GameObject:
   m_ObjectHideFlags: 0
@@ -15169,37 +15181,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8634966436415411777, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
   m_PrefabInstance: {fileID: 1443905910}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1452075661
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1452075662}
-  m_Layer: 0
-  m_Name: Nature
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1452075662
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452075661}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 192.42766, y: 300.8679, z: 364.17874}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1463720657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15678,7 +15659,7 @@ MonoBehaviour:
           m_StringArgument: Main-Wish
           m_BoolArgument: 0
         m_CallState: 2
-  tagNameCheck: 
+  tagNameCheck: Player
 --- !u!136 &1538193089
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21591,37 +21572,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7502513757696256612, guid: 94b71a3ccde5ccc45b2508361cccd1fd, type: 3}
   m_PrefabInstance: {fileID: 1809051266}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1809379786
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1809379787}
-  m_Layer: 0
-  m_Name: Temp object - location of XR Interaction Setup that I like
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1809379787
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1809379786}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.058270164, y: -0.7021363, z: -0.03955637, w: 0.708551}
-  m_LocalPosition: {x: 352.16992, y: 380.8, z: 296.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1820803392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21732,6 +21682,10 @@ PrefabInstance:
       propertyPath: fadeColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536258925272691280, guid: b941f523e32802047928f31130acdb80, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1915742760649896155, guid: b941f523e32802047928f31130acdb80, type: 3}
       propertyPath: m_Name
       value: PlayerSwimmer
@@ -21746,43 +21700,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5082860342291241285, guid: b941f523e32802047928f31130acdb80, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 366
+      value: 352.31305
       objectReference: {fileID: 0}
     - target: {fileID: 5082860342291241285, guid: b941f523e32802047928f31130acdb80, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 355.5
+      value: 380.8
       objectReference: {fileID: 0}
     - target: {fileID: 5082860342291241285, guid: b941f523e32802047928f31130acdb80, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 313.4
+      value: 295.87717
       objectReference: {fileID: 0}
     - target: {fileID: 5082860342291241285, guid: b941f523e32802047928f31130acdb80, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.02497171
       objectReference: {fileID: 0}
     - target: {fileID: 5082860342291241285, guid: b941f523e32802047928f31130acdb80, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.014647112
       objectReference: {fileID: 0}
     - target: {fileID: 5082860342291241285, guid: b941f523e32802047928f31130acdb80, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.99720424
       objectReference: {fileID: 0}
     - target: {fileID: 5082860342291241285, guid: b941f523e32802047928f31130acdb80, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.06888814
       objectReference: {fileID: 0}
     - target: {fileID: 5082860342291241285, guid: b941f523e32802047928f31130acdb80, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -7.939
       objectReference: {fileID: 0}
     - target: {fileID: 5082860342291241285, guid: b941f523e32802047928f31130acdb80, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -177.235
       objectReference: {fileID: 0}
     - target: {fileID: 5082860342291241285, guid: b941f523e32802047928f31130acdb80, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 1.491
       objectReference: {fileID: 0}
     - target: {fileID: 9199228625349806866, guid: b941f523e32802047928f31130acdb80, type: 3}
       propertyPath: m_ShowToolkit
@@ -27635,7 +27589,6 @@ SceneRoots:
   - {fileID: 1840487289}
   - {fileID: 2054195402}
   - {fileID: 1351447880}
-  - {fileID: 1452075662}
   - {fileID: 1156130427}
   - {fileID: 1084001241}
   - {fileID: 1702225215}
@@ -27643,7 +27596,6 @@ SceneRoots:
   - {fileID: 1184526227}
   - {fileID: 1092162608}
   - {fileID: 1552641090}
-  - {fileID: 1809379787}
   - {fileID: 984149352}
   - {fileID: 1324893310}
   - {fileID: 1238121864}

@@ -3200,6 +3200,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5026245513197295729, guid: 3c4ed49a67f687e4391dd75073d5b9fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5334295043491519226, guid: 3c4ed49a67f687e4391dd75073d5b9fe, type: 3}
       propertyPath: m_Name
       value: PlayerWish
