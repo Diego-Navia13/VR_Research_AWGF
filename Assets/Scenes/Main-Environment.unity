@@ -6109,6 +6109,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8634966436415411777, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
   m_PrefabInstance: {fileID: 474621118}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &430320391 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 578834956032768535, guid: b941f523e32802047928f31130acdb80, type: 3}
+  m_PrefabInstance: {fileID: 1840487289}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2d507c3ae9dc744a28e79d568b5806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &474621118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6921,7 +6932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -13373,6 +13384,7 @@ GameObject:
   - component: {fileID: 1084001239}
   - component: {fileID: 1084001238}
   - component: {fileID: 1084001242}
+  - component: {fileID: 1084001243}
   m_Layer: 0
   m_Name: BlackholeShader
   m_TagString: Untagged
@@ -13481,6 +13493,60 @@ MonoBehaviour:
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1084001243}
+        m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
+        m_MethodName: StartTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Main-Blackhole
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 430320391}
+        m_TargetAssemblyTypeName: FadeScreen, Assembly-CSharp
+        m_MethodName: SetFadeDuration
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 6
+          m_StringArgument: Main-Blackhole
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 430320391}
+        m_TargetAssemblyTypeName: FadeScreen, Assembly-CSharp
+        m_MethodName: FadeOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Main-Blackhole
+          m_BoolArgument: 0
+        m_CallState: 2
+  tagNameCheck: Player
+--- !u!114 &1084001243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084001236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e9fe87283030745a521a01f432d298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTime: 6
+  startOnAwake: 0
+  onTimerEnd:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 1148079407}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadScene
@@ -13493,7 +13559,6 @@ MonoBehaviour:
           m_StringArgument: Main-Blackhole
           m_BoolArgument: 0
         m_CallState: 2
-  tagNameCheck: Player
 --- !u!1 &1092162606
 GameObject:
   m_ObjectHideFlags: 0
@@ -21425,7 +21490,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 351967b1d679c6d4a9183d10ef96c85e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2120798737}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 351967b1d679c6d4a9183d10ef96c85e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2120798736}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 351967b1d679c6d4a9183d10ef96c85e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2120798735}
   m_SourcePrefab: {fileID: 100100000, guid: 351967b1d679c6d4a9183d10ef96c85e, type: 3}
 --- !u!4 &1733017343 stripped
 Transform:
@@ -21448,7 +21522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1767358056
 Transform:
   m_ObjectHideFlags: 0
@@ -27634,6 +27708,114 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8634966436415411777, guid: b28acdb5487d5de4cad26952fab208cc, type: 3}
   m_PrefabInstance: {fileID: 2116021454}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2120798732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 351967b1d679c6d4a9183d10ef96c85e, type: 3}
+  m_PrefabInstance: {fileID: 1733017342}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2120798735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120798732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e9fe87283030745a521a01f432d298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTime: 6
+  startOnAwake: 0
+  onTimerEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1148079407}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Main-Wish
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2120798736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120798732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f320b1faffe5524fb308ff86a21c5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 430320391}
+        m_TargetAssemblyTypeName: FadeScreen, Assembly-CSharp
+        m_MethodName: SetFadeDuration
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 6
+          m_StringArgument: Main-Wish
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 430320391}
+        m_TargetAssemblyTypeName: FadeScreen, Assembly-CSharp
+        m_MethodName: FadeOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Main-Wish
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2120798735}
+        m_TargetAssemblyTypeName: TimerTrigger, Assembly-CSharp
+        m_MethodName: StartTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Main-Wish
+          m_BoolArgument: 0
+        m_CallState: 2
+  tagNameCheck: Player
+--- !u!64 &2120798737
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120798732}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6195245291975648998, guid: 351967b1d679c6d4a9183d10ef96c85e, type: 3}
 --- !u!1001 &2125462017
 PrefabInstance:
   m_ObjectHideFlags: 0
