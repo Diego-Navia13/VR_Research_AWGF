@@ -52,7 +52,7 @@ public class AudioRecorder : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log("State is currently " + canRecord.ToString());
+        //Debug.Log("State is currently " + canRecord.ToString());
     }
 
     public void StartRecording()
