@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Accessibility;
 
 public class AudioRecorder : MonoBehaviour
 {
@@ -11,11 +12,14 @@ public class AudioRecorder : MonoBehaviour
     private float startTime;
     private float recordingLength;
     public bool clipRecorded = false;
-    private WishStateController wishState;
+    private bool canRecord = false;
+    public WishStateController wishState;
+    private const int MAX_RECORDING_SECONDS = 10;
+    public AudioSource comeCloserSFX;
 
     private void Awake()
     {
-        wishState = GetComponent<WishStateController>();
+        //wishState = GetComponent<WishStateController>();
 
         directoryPath = Path.Combine(Application.dataPath, "Recordings");
 
@@ -25,17 +29,45 @@ public class AudioRecorder : MonoBehaviour
         }
     }
 
-    public void hasRecorded(bool state)
+    private void hasRecorded(bool state)
     {
         clipRecorded = state;
     }
 
+    private void playComeCloser()
+    {
+        if (comeCloserSFX != null)
+        {
+            comeCloserSFX.Play();
+        }
+    }
+
+    public void setCanRecord(bool state)
+    {
+        Debug.Log("State of canRecord prior to change: " + this.canRecord.ToString());
+        this.canRecord = state;
+        Debug.Log("State changed to " + this.canRecord.ToString());
+        Debug.Log($"[Trigger] {gameObject.name} | ID: {GetInstanceID()}");
+    }
+
+    public void Update()
+    {
+        Debug.Log("State is currently " + canRecord.ToString());
+    }
+
     public void StartRecording()
     {
-        if (clipRecorded) return;
+        if (clipRecorded || !canRecord)
+        {
+            playComeCloser();
+            Debug.Log("I can't record yet");
+            Debug.Log("State of canRecord: " + canRecord.ToString());
+            Debug.Log("State of clipRecorded: " + clipRecorded.ToString());
+            return;
+        }
         string device = Microphone.devices[0];
         int sampleRate = 44100;
-        int lengthSec = 3599;
+        int lengthSec = MAX_RECORDING_SECONDS;
 
         recordedClip = Microphone.Start(device, false, lengthSec, sampleRate);
         startTime = Time.realtimeSinceStartup;
@@ -43,7 +75,9 @@ public class AudioRecorder : MonoBehaviour
 
     public void StopRecording()
     {
-        if (clipRecorded) return;
+        if (clipRecorded || !canRecord) return;
+
+        hasRecorded(true);
 
         // Safely end microphone (use first device if available)
         if (Microphone.devices.Length > 0)

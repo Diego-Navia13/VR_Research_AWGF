@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -9,18 +10,21 @@ public class WishStateController : MonoBehaviour
     public bool hasWish = false;
 
     [Header("Audio")]
-    public AudioSource audioSource;
+    public AudioSource wishRecording;
 
     [Header("Visuals")]
     public Renderer wishRenderer;
     public Color emptyColor = Color.gray;
 
     private Color filledColor;
+    public float forceAmount = 10f;
+    private Rigidbody rb;
+    public bool isBeingGrabbed = false;
 
     void Start()
     {
         // If the wish already has audio assigned at start
-        if (audioSource != null && audioSource.clip != null)
+        if (wishRecording != null && wishRecording.clip != null)
         {
             hasWish = true;
             AssignRandomFilledColor();
@@ -29,12 +33,20 @@ public class WishStateController : MonoBehaviour
         {
             SetEmptyVisual();
         }
+        rb = GetComponent<Rigidbody>();
+        UnityEngine.Vector3 randDirection = UnityEngine.Random.onUnitSphere;
+        rb.AddForce(randDirection * forceAmount, ForceMode.Impulse);
+    }
+
+    public void setIsBeingGrabbed(bool state)
+    {
+        isBeingGrabbed = state;
     }
 
     // Called when user finishes recording
     public void SetWishAudio(AudioClip newClip)
     {
-        audioSource.clip = newClip;
+        wishRecording.clip = newClip;
         hasWish = true;
 
         AssignRandomFilledColor();
@@ -43,7 +55,7 @@ public class WishStateController : MonoBehaviour
     void AssignRandomFilledColor()
     {
         filledColor = Random.ColorHSV(
-            0f, 1f,
+            0.6f, 1f,
             0.6f, 1f,
             0.6f, 1f
         );
@@ -56,18 +68,18 @@ public class WishStateController : MonoBehaviour
         wishRenderer.material.color = emptyColor;
     }
 
-    // Controlled playback (not hover)
+    // Controlled playback
     public void PlayWish()
     {
         if (!hasWish) return;
 
-        if (!audioSource.isPlaying)
-            audioSource.Play();
+        if (!wishRecording.isPlaying)
+            wishRecording.Play();
     }
 
     public void StopWish()
     {
-        if (audioSource.isPlaying)
-            audioSource.Stop();
+        if (wishRecording.isPlaying)
+            wishRecording.Stop();
     }
 }

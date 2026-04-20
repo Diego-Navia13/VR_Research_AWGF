@@ -4,15 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Wish
   - TimedParticles
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Post Processing
   - 
   - 
   - 
