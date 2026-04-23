@@ -140,7 +140,7 @@ public class AudioRecorder : MonoBehaviour
 
     public void UseRecording()
     {
-        if (recordedClip == null)
+        if (!recordedClip )
         {
             Debug.LogWarning("No recording available to use.");
 
@@ -149,6 +149,7 @@ public class AudioRecorder : MonoBehaviour
 
         audioSource.clip = recordedClip;
         wishState.SetWishAudio(recordedClip);
+        comeCloserSFX.clip = null;
 
         Debug.Log("Recording set to AudioSource.");
     }

@@ -38,6 +38,11 @@ public class WishStateController : MonoBehaviour
         rb.AddForce(randDirection * forceAmount, ForceMode.Impulse);
     }
 
+    public bool getBeingGrabbed()
+    {
+        return isBeingGrabbed;
+    }
+
     public void setIsBeingGrabbed(bool state)
     {
         isBeingGrabbed = state;
