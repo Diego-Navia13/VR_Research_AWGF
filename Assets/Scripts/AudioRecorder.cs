@@ -27,6 +27,11 @@ public class AudioRecorder : MonoBehaviour
         {
             Directory.CreateDirectory(directoryPath);
         }
+
+        foreach (var mic in Microphone.devices)
+        {
+            Debug.Log("Mic device: " + mic);
+        }
     }
 
     private void hasRecorded(bool state)
@@ -65,7 +70,22 @@ public class AudioRecorder : MonoBehaviour
             Debug.Log("State of clipRecorded: " + clipRecorded.ToString());
             return;
         }
-        string device = Microphone.devices[0];
+        string device = Microphone.devices[0]; // Default mic
+        //string device = null;
+
+        //foreach (var mic in Microphone.devices)
+        //{
+        //    if (mic.Contains("LCS"))
+        //    {
+        //        device = mic;
+        //        break;
+        //    }
+        //}
+
+        if (device == null)
+            device = Microphone.devices[0];
+
+        Debug.Log("Using mic: " + device);
         int sampleRate = 44100;
         int lengthSec = MAX_RECORDING_SECONDS;
 
@@ -88,13 +108,19 @@ public class AudioRecorder : MonoBehaviour
             return;
         }
 
+        // Stop mic AFTER getting position
         Microphone.End(device);
 
         float[] data = new float[position * recordedClip.channels];
         recordedClip.GetData(data, 0);
 
-        AudioClip newClip = AudioClip.Create("RecordedClip", position,
-            recordedClip.channels, recordedClip.frequency, false);
+        AudioClip newClip = AudioClip.Create(
+            "RecordedClip",
+            position,
+            recordedClip.channels,
+            recordedClip.frequency,
+            false
+        );
 
         newClip.SetData(data, 0);
 
@@ -102,12 +128,15 @@ public class AudioRecorder : MonoBehaviour
 
         SaveRecording();
 
+        // Assign everywhere
         audioSource.clip = recordedClip;
         wishState.SetWishAudio(recordedClip);
 
         clipRecorded = true;
 
-        Debug.Log("Wish successfully recorded and assigned.");
+        Debug.Log($"Recorded samples: {position}");
+        Debug.Log("Clip length: " + recordedClip.length);
+        Debug.Log("Clip samples: " + recordedClip.samples);
     }
 
     public void SaveRecording()
