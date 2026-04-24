@@ -51,6 +51,7 @@ public class WishStateController : MonoBehaviour
     // Called when user finishes recording
     public void SetWishAudio(AudioClip newClip)
     {
+        if (hasWish) return;
         wishRecording.clip = newClip;
         hasWish = true;
 

@@ -36,7 +36,7 @@ public class AudioRecorder : MonoBehaviour
 
     private void playComeCloser()
     {
-        if (comeCloserSFX != null)
+        if (comeCloserSFX != null || !clipRecorded)
         {
             comeCloserSFX.Play();
         }
@@ -59,7 +59,7 @@ public class AudioRecorder : MonoBehaviour
     {
         if (clipRecorded || !canRecord)
         {
-            playComeCloser();
+            if (!canRecord) { playComeCloser(); }
             Debug.Log("I can't record yet");
             Debug.Log("State of canRecord: " + canRecord.ToString());
             Debug.Log("State of clipRecorded: " + clipRecorded.ToString());
@@ -77,7 +77,6 @@ public class AudioRecorder : MonoBehaviour
     {
         if (clipRecorded || !canRecord) return;
 
-        hasRecorded(true);
 
         // Safely end microphone (use first device if available)
         if (Microphone.devices.Length > 0)
@@ -140,7 +139,7 @@ public class AudioRecorder : MonoBehaviour
 
     public void UseRecording()
     {
-        if (!recordedClip )
+        if (recordedClip == null)
         {
             Debug.LogWarning("No recording available to use.");
 
@@ -149,7 +148,7 @@ public class AudioRecorder : MonoBehaviour
 
         audioSource.clip = recordedClip;
         wishState.SetWishAudio(recordedClip);
-        comeCloserSFX.clip = null;
+
 
         Debug.Log("Recording set to AudioSource.");
     }
