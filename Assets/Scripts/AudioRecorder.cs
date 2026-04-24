@@ -95,7 +95,7 @@ public class AudioRecorder : MonoBehaviour
 
     public void StopRecording()
     {
-        if (clipRecorded || !canRecord) return;
+        if (clipRecorded) return;
 
         string device = Microphone.devices[0];
 
