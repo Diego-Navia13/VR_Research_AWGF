@@ -400,9 +400,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4644938502164496195}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
+      - m_Target: {fileID: 6949821408397335338}
+        m_TargetAssemblyTypeName: WishStateController, Assembly-CSharp
+        m_MethodName: PlayWish
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

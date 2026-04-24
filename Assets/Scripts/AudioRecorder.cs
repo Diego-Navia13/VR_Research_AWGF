@@ -36,7 +36,7 @@ public class AudioRecorder : MonoBehaviour
 
     private void playComeCloser()
     {
-        if (comeCloserSFX != null || !clipRecorded)
+        if (comeCloserSFX != null && !clipRecorded)
         {
             comeCloserSFX.Play();
         }
@@ -77,31 +77,37 @@ public class AudioRecorder : MonoBehaviour
     {
         if (clipRecorded || !canRecord) return;
 
+        string device = Microphone.devices[0];
 
-        // Safely end microphone (use first device if available)
-        if (Microphone.devices.Length > 0)
-            Microphone.End(Microphone.devices[0]);
-        else
-            Microphone.End(null);
+        int position = Microphone.GetPosition(device);
 
-        recordingLength = Time.realtimeSinceStartup - startTime;
-        recordedClip = TrimClip(recordedClip, recordingLength);
+        if (position <= 0)
+        {
+            Debug.LogWarning("No audio captured!");
+            Microphone.End(device);
+            return;
+        }
+
+        Microphone.End(device);
+
+        float[] data = new float[position * recordedClip.channels];
+        recordedClip.GetData(data, 0);
+
+        AudioClip newClip = AudioClip.Create("RecordedClip", position,
+            recordedClip.channels, recordedClip.frequency, false);
+
+        newClip.SetData(data, 0);
+
+        recordedClip = newClip;
+
         SaveRecording();
 
-        // Assign it to audio playback
         audioSource.clip = recordedClip;
-
-        // Notify wish system that it is now full
         wishState.SetWishAudio(recordedClip);
 
-        // Lock recording
         clipRecorded = true;
 
         Debug.Log("Wish successfully recorded and assigned.");
-
-        // If you don't need the trimmed clip after saving, destroy it too:
-        //UnityEngine.Object.Destroy(recordedClip);
-        //recordedClip = null;
     }
 
     public void SaveRecording()
