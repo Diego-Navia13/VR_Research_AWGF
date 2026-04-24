@@ -2,25 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEngine.Accessibility;
 
 public class AudioRecorder : MonoBehaviour
 {
     private AudioClip recordedClip;
-    [SerializeField] AudioSource audioSource;
+
+    [SerializeField] private AudioSource audioSource;
+    public AudioSource comeCloserSFX;
+
     private string directoryPath;
-    private float startTime;
-    private float recordingLength;
+
     public bool clipRecorded = false;
     private bool canRecord = false;
+    private bool isRecording = false;
+
     public WishStateController wishState;
+
     private const int MAX_RECORDING_SECONDS = 10;
-    public AudioSource comeCloserSFX;
 
     private void Awake()
     {
-        //wishState = GetComponent<WishStateController>();
-
         directoryPath = Path.Combine(Application.dataPath, "Recordings");
 
         if (!Directory.Exists(directoryPath))
@@ -34,82 +35,77 @@ public class AudioRecorder : MonoBehaviour
         }
     }
 
-    private void hasRecorded(bool state)
-    {
-        clipRecorded = state;
-    }
-
-    private void playComeCloser()
-    {
-        if (comeCloserSFX != null && !clipRecorded)
-        {
-            comeCloserSFX.Play();
-        }
-    }
-
     public void setCanRecord(bool state)
     {
-        Debug.Log("State of canRecord prior to change: " + this.canRecord.ToString());
-        this.canRecord = state;
-        Debug.Log("State changed to " + this.canRecord.ToString());
+        canRecord = state;
+
+        Debug.Log("canRecord changed: " + canRecord);
         Debug.Log($"[Trigger] {gameObject.name} | ID: {GetInstanceID()}");
     }
 
-    public void Update()
-    {
-        //Debug.Log("State is currently " + canRecord.ToString());
-    }
-
+    // -------------------------
+    // START RECORDING
+    // -------------------------
     public void StartRecording()
     {
-        if (clipRecorded || !canRecord)
+        if (clipRecorded || isRecording)
+            return;
+
+        if (!canRecord)
         {
-            if (!canRecord) { playComeCloser(); }
-            Debug.Log("I can't record yet");
-            Debug.Log("State of canRecord: " + canRecord.ToString());
-            Debug.Log("State of clipRecorded: " + clipRecorded.ToString());
+            playComeCloser();
+            Debug.Log("Cannot record: outside trigger area");
             return;
         }
-        string device = Microphone.devices[0]; // Default mic
-        //string device = null;
 
-        //foreach (var mic in Microphone.devices)
-        //{
-        //    if (mic.Contains("LCS"))
-        //    {
-        //        device = mic;
-        //        break;
-        //    }
-        //}
+        string device = Microphone.devices.Length > 0
+            ? Microphone.devices[0]
+            : null;
 
         if (device == null)
-            device = Microphone.devices[0];
+        {
+            Debug.LogError("No microphone device found!");
+            return;
+        }
 
         Debug.Log("Using mic: " + device);
-        int sampleRate = 44100;
-        int lengthSec = MAX_RECORDING_SECONDS;
 
-        recordedClip = Microphone.Start(device, false, lengthSec, sampleRate);
-        startTime = Time.realtimeSinceStartup;
+        recordedClip = Microphone.Start(device, false, MAX_RECORDING_SECONDS, 44100);
+
+        isRecording = true;
+
+        Debug.Log("Recording STARTED");
     }
 
+    // -------------------------
+    // STOP RECORDING (CRITICAL FIX)
+    // -------------------------
     public void StopRecording()
     {
-        if (clipRecorded) return;
+        if (!isRecording)
+            return;
 
-        string device = Microphone.devices[0];
+        string device = Microphone.devices.Length > 0
+            ? Microphone.devices[0]
+            : null;
+
+        if (device == null)
+        {
+            Debug.LogError("No microphone device found on stop!");
+            isRecording = false;
+            return;
+        }
 
         int position = Microphone.GetPosition(device);
 
-        if (position <= 0)
+        Microphone.End(device);
+
+        if (position <= 0 || recordedClip == null)
         {
             Debug.LogWarning("No audio captured!");
-            Microphone.End(device);
+            isRecording = false;
             return;
         }
-
-        // Stop mic AFTER getting position
-        Microphone.End(device);
 
         float[] data = new float[position * recordedClip.channels];
         recordedClip.GetData(data, 0);
@@ -128,64 +124,64 @@ public class AudioRecorder : MonoBehaviour
 
         SaveRecording();
 
-        // Assign everywhere
         audioSource.clip = recordedClip;
-        wishState.SetWishAudio(recordedClip);
+
+        if (wishState != null)
+            wishState.SetWishAudio(recordedClip);
 
         clipRecorded = true;
+        isRecording = false;
 
         Debug.Log($"Recorded samples: {position}");
         Debug.Log("Clip length: " + recordedClip.length);
-        Debug.Log("Clip samples: " + recordedClip.samples);
     }
 
+    // -------------------------
+    // SAVE WAV
+    // -------------------------
     public void SaveRecording()
     {
-        if (recordedClip != null)
-        {
-            int fileCount = Directory.GetFiles(directoryPath, "*.wav").Length;
-            string filePath = Path.Combine(directoryPath, "recording_" + fileCount + ".wav");
-            WavUtility.Save(filePath, recordedClip);
-            Debug.Log("Recording saved as " + filePath);
-        }
-        else
+        if (recordedClip == null)
         {
             Debug.LogError("No recording found to save.");
+            return;
+        }
+
+        int fileCount = Directory.GetFiles(directoryPath, "*.wav").Length;
+        string filePath = Path.Combine(directoryPath, "recording_" + fileCount + ".wav");
+
+        WavUtility.Save(filePath, recordedClip);
+
+        Debug.Log("Recording saved as " + filePath);
+    }
+
+    // -------------------------
+    // COME CLOSER AUDIO
+    // -------------------------
+    private void playComeCloser()
+    {
+        if (comeCloserSFX != null && !clipRecorded)
+        {
+            comeCloserSFX.Play();
         }
     }
 
-    private AudioClip TrimClip(AudioClip clip, float length)
-    {
-        if (clip == null) return null;
-
-        int samples = Mathf.Clamp((int)(clip.frequency * length), 0, clip.samples);
-        float[] data = new float[samples];
-        clip.GetData(data, 0);
-
-        AudioClip trimmedClip = AudioClip.Create(clip.name + "_trimmed", samples,
-            clip.channels, clip.frequency, false);
-        trimmedClip.SetData(data, 0);
-
-        // Free the original clip's native memory — Microphone.Start() creates it
-        UnityEngine.Object.Destroy(clip);
-
-        return trimmedClip;
-    }
-
+    // -------------------------
+    // MANUAL USE (DEBUG / GRAB)
+    // -------------------------
     public void UseRecording()
     {
         if (recordedClip == null)
         {
-            Debug.LogWarning("No recording available to use.");
-
+            Debug.LogWarning("No recording available.");
             return;
         }
 
         audioSource.clip = recordedClip;
-        wishState.SetWishAudio(recordedClip);
 
+        if (wishState != null)
+            wishState.SetWishAudio(recordedClip);
 
-        Debug.Log("Recording set to AudioSource.");
+        Debug.Log("Recording assigned to Wish.");
     }
-
 }
